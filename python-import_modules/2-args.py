@@ -10,4 +10,3 @@ if __name__ == "__main__":
         print(f"{num_args} arguments:")
     for i in range(1, len(sys.argv)):
         print(f"{i}: {sys.argv[i]}")
-
