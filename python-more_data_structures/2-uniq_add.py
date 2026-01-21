@@ -5,6 +5,6 @@ def uniq_add(my_list=[]):
         if element not in unique_elements:
             unique_elements.append(element)
             total = 0
-            for element in unique_elements:
-                total += element
+    for element in unique_elements:
+        total += element
     return total
