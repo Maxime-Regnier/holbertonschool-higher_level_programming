@@ -33,6 +33,6 @@ def matrix_divided(matrix, div):
         new_row = []
         for num in row:
             new_row.append(round(num / div, 2))
-            new_matrix.append(new_row)
+        new_matrix.append(new_row)
 
     return new_matrix
