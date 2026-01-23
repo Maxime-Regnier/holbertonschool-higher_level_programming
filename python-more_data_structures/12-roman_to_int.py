@@ -6,8 +6,8 @@ def roman_to_int(roman_string):
     total = 0
     for i in range(len(roman_string)):
         value = roman[roman_string[i]]
-    if i + 1 < len (roman_string) and value < roman[roman_string[i + 1]]:
-        total -= value
-    else:
-        total+= value
-        return total
+        if i + 1 < len (roman_string) and value < roman[roman_string[i + 1]]:
+            total -= value
+        else:
+            total+= value
+    return total
