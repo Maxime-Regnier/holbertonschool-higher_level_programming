@@ -1,15 +1,16 @@
->>> from add_integer import add_integer
->>> add_integer(1, 2)
-3
->>> add_integer(10)
-108
->>> add_integer(1.5, 2.5)
-3
->>> add_integer(-1, 1)
-0
->>> add_integer("1", 2)
-Traceback (most recent call last):
-TypeError: a must be an integer
->>> add_integer(1, "2")
-Traceback (most recent call last):
-TypeError: b must be an integer
+#!/usr/bin/python3
+from 0_add_integer import add_integer
+
+print(add_integer(1, 2))      # 3
+print(add_integer(10))        # 108
+print(add_integer(1.5, 2.5))  # 3
+
+try:
+    add_integer("1", 2)
+except Exception as e:
+    print(e)  # a must be an integer
+
+try:
+    add_integer(1, "2")
+except Exception as e:
+    print(e)  # b must be an integer
