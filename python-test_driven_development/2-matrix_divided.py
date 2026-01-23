@@ -3,13 +3,13 @@
 This module contains a function matrix_divided(matrix, div)
 that divides all elements of a matrix by div and returns a new matrix.
 """
+
+
 def matrix_divided(matrix, div):
-    """ 
+    """
     Function that divides all elements of a matrix by div
     and returns a new matrix with results rounded to 2 decimals.
     """
-
-
     # Vérification de matrix
     if (not isinstance(matrix, list) or matrix == [] or
         not all(isinstance(row, list) for row in matrix) or
@@ -27,12 +27,5 @@ def matrix_divided(matrix, div):
     if div == 0:
         raise ZeroDivisionError("division by zero")
 
-    # Nouvelle matrice
-    new_matrix = []
-    for row in matrix:
-        new_row = []
-        for num in row:
-            new_row.append(round(num / div, 2))
-        new_matrix.append(new_row)
-
-    return new_matrix
+    # Création de la nouvelle matrice
+    return [[round(num / div, 2) for num in row] for row in matrix]
