@@ -60,13 +60,15 @@ class Rectangle:
              for _ in range(self.__height)])
 
     def __repr__(self):
-        """Return a string representation to recreate the rectangle with eval()."""
+        """Return a string representation of the rectangle.
+        Can be used with eval() to create a new instance."""
         return f"Rectangle({self.__width}, {self.__height})"
 
     def __del__(self):
         """Print a message when a rectangle is deleted."""
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
+
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         """Return the rectangle with the bigger area."""
