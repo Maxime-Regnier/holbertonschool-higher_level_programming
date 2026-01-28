@@ -5,11 +5,11 @@ myrectangle = Rectangle(2, 4)
 print("Area: {} - Perimeter: {}".format(myrectangle.area(), myrectangle.perimeter()))
 
 print(str(myrectangle)) 
-print(repr(myrectangle))
+print(myrectangle)
 
 print("--")
 
 myrectangle.width = 10 
 myrectangle.height = 3 
 print(myrectangle) 
-print(repr(myrectangle))
+print(myrectangle)
