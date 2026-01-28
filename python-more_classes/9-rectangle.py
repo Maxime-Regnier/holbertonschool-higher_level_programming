@@ -60,12 +60,12 @@ class Rectangle:
              for _ in range(self.__height)])
 
     def __repr__(self):
-        """Return a string representation to recreate 
+        """Return a string representation to recreate
         the rectangle with eval()."""
         return f"Rectangle({self.__width}, {self.__height})"
 
     def __del__(self):
-        """Print a message when an instance is deleted 
+        """Print a message when an instance is deleted
         and decrement counter."""
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
@@ -80,7 +80,7 @@ class Rectangle:
         if rect_1.area() >= rect_2.area():
             return rect_1
         return rect_2
-    
+
     @classmethod
     def square(cls, size=0):
         """Return a new Rectangle instance with width == height == size."""
