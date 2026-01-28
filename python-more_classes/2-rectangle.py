@@ -18,9 +18,9 @@ class Rectangle:
     def width(self, value):
         """Set the width with validation."""
         if not isinstance(value, int):
-                raise TypeError("width must be an integer")
+            raise TypeError("width must be an integer")
         if value < 0:
-                raise ValueError("width must be >= 0")
+            raise ValueError("width must be >= 0")
         self.__width = value
 
     @property
@@ -32,9 +32,9 @@ class Rectangle:
     def height(self, value):
         """Set the height with validation."""
         if not isinstance(value, int):
-                raise TypeError("height must be an integer")
+            raise TypeError("height must be an integer")
         if value < 0:
-                raise ValueError("height must be >= 0")
+            raise ValueError("height must be >= 0")
         self.__height = value
 
     def area(self):
@@ -44,5 +44,5 @@ class Rectangle:
     def perimeter(self):
         """Return the perimeter of the rectangle."""
         if self.__width == 0 or self.__height == 0:
-                return 0
+            return 0
         return 2 * (self.__width + self.__height)
