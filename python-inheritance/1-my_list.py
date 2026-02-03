@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This module defines a class MyList inherits from the built-in list class.
+This module defines a MyList class inheriting from the built-in list class.
 """
 
 class MyList(list):
