@@ -3,5 +3,5 @@
 class MyList(list):
     """ Arg: list
         No return """
-    def print_sorted(list):
-        return print(sorted(list))
+    def print_sorted(self):
+        print(sorted(self))
