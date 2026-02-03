@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 """
-This module defines a class MyList that inherits from the built-in list class.
+This module defines a class MyList inherits from the built-in list class.
 """
 
 class MyList(list):
     """
-    MyList is a subclass of list that provides a method
+    MyList is a subclass of list providing a method
     to print the list sorted in ascending order.
     """
 
