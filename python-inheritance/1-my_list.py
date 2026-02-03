@@ -3,8 +3,5 @@
 class MyList(list):
     """ Arg: list
         No return """
-    def __str__(self):
-    # Return a string representation of the object
-        pass
     def print_sorted(list):
         return print(sorted(list))
