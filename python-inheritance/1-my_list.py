@@ -5,7 +5,7 @@ This module defines a class MyList that inherits from the built-in list class.
 
 class MyList(list):
     """
-    MyList is a subclass of list that provides an additional method
+    MyList is a subclass of list that provides a method
     to print the list sorted in ascending order.
     """
 
