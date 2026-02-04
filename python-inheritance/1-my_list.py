@@ -15,3 +15,7 @@ class MyList(list):
         modifying the original list.
         """
         print(sorted(self))
+        
+    def __str__(self):
+        """ We transform the instance (self) into a standard list, then into a string to fit the expected format. """
+        return list.__str__(self)
