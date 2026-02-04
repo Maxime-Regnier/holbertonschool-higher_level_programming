@@ -1,5 +1,5 @@
 Import de la classe :
->>> from mon_script import MyList
+>>> MyList = import('1-my_list').MyList
 
 On crée une instance avec des chiffres désordonnés :
 >>> l = MyList([3, 1, 2])
