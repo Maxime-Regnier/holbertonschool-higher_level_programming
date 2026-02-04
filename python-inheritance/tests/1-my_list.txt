@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 Import de la classe :
 >>> MyList = __import__('1-my_list').MyList
 
