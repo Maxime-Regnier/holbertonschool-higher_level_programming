@@ -1,15 +1,15 @@
 #!/usr/bin/python3
-""" Document containing the BaseGeometry class """
+""" Module containing the BaseGeometry class. """
 
 
 class BaseGeometry:
-    """ Class that manages geometry parameters """
+    """ BaseGeometry class: defines common geometry methods. """
     def area(self):
-        """ Function that handles exceptions for air calculation """
+        """ Calculates the area of the shape. """
         raise Exception("area() is not implemented")
     
     def integer_validator(self, name, value):
-        """"""
+        """ Validates that a value is a positive integer. """
         if type(value) is not int:
             raise TypeError(f"{name} must be an integer")
         elif value <= 0:
