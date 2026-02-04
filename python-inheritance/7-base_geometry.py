@@ -3,13 +3,15 @@
 
 
 class BaseGeometry:
-    """ BaseGeometry class: defines common geometry methods. """
+    """Base class for geometry"""
     def area(self):
-        """ Calculates the area of the shape. """
+        """Raises an Exception because area is not implemented"""
         raise Exception("area() is not implemented")
 
-    if type(value) is not int:
-        raise TypeError(f"{name} must be an integer")
+    def integer_validator(self, name, value):
+        """Validates that value is a positive integer"""
+        if type(value) is not int:
+            raise TypeError(f"{name} must be an integer")
     
-    if value <= 0:
-        raise ValueError(f"{name} must be greater than 0")
+        if value <= 0:
+            raise ValueError(f"{name} must be greater than 0")
