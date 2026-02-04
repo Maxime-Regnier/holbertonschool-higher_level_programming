@@ -1,16 +1,13 @@
-#!/usr/bin/python3
-
-Import de la classe :
 >>> MyList = __import__('1-my_list').MyList
-
-Création de mon instance
 >>> my_list = MyList()
-
-Création de la liste
 >>> my_list.append(2)
-
 >>> my_list.append(1)
-
-Vérification de ma fonction
 >>> my_list.print_sorted()
 [1, 2]
+>>> my_list
+[2, 1]
+>>> my_list.append(3)
+>>> my_list.print_sorted()
+[1, 2, 3]
+>>> my_list
+[2, 1, 3]
