@@ -1,9 +1,12 @@
 Import de la classe :
->>> MyList = import('1-my_list').MyList
+>>> MyList = __import__('1-my_list').MyList
 
-On crée une instance avec des chiffres désordonnés :
->>> l = MyList([3, 1, 2])
+Création de mon instance
+>>> my_list = MyList()
 
-On appelle notre méthode personnalisée :
->>> l.print_sorted()
-[1, 2, 3]
+Création de la liste
+>>> my_list.append([2, 1])
+
+Vérification de ma fonction
+>>> my_list.print_sorted()
+[1, 2]
