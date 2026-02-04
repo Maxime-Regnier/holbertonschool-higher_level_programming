@@ -3,6 +3,7 @@
 This module defines a MyList class inheriting from the built-in list class.
 """
 
+
 class MyList(list):
     """
     MyList is a subclass of list providing a method
@@ -10,9 +11,10 @@ class MyList(list):
     """
 
     def __str__(self):
-        """ We transform the instance (self) into a standard list, then into a string to fit the expected format. """
+        """ We transform the instance (self) into a standard list,
+        then into a string to fit the expected format. """
         return super().__str__()
-    
+
     def print_sorted(self):
         """
         Prints the elements of the list in ascending order without
