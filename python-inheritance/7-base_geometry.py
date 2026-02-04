@@ -7,7 +7,6 @@ class BaseGeometry:
     def area(self):
         """ Calculates the area of the shape. """
         raise Exception("area() is not implemented")
-    
 
     def integer_validator(self, name, value):
         """ Validates that a value is a positive integer. """
