@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+Script that adds all arguments to a Python list and saves them to add_item.json
+"""
 import sys
 from pathlib import Path
 from save_to_json_file import save_to_json_file
