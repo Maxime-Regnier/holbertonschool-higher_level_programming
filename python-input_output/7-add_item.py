@@ -8,8 +8,18 @@ Script that adds all arguments to a Python list and saves them to add_item.json.
 """
 import sys
 from pathlib import Path
-from save_to_json_file import save_to_json_file
-from load_from_json_file import load_from_json_file
+import json
+
+def save_to_json_file(my_obj, filename):
+    """Writes an object to a text file using JSON representation."""
+    with open(filename, "w") as f:
+        json.dump(my_obj, f)
+
+
+def load_from_json_file(filename):
+    """Load an object from a JSON file."""
+    with open(filename, "r") as f:
+        return json.load(f)
 args = sys.argv[1:]
 filename = "add_item.json"
 if Path(filename).exists():
