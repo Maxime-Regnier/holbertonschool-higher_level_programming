@@ -1,6 +1,7 @@
 #!/usr/bin/python3
+"""Module defines Student class."""
 class Student:
-    """Defines a student with first_name, last_name, and age."""
+    """Student with first_name, last_name, and age."""
 
 
     def __init__(self, first_name, last_name, age):
