@@ -11,7 +11,4 @@ def convert_csv_to_json(csv_filename):
             return True
     except FileNotFoundError:
             print(f"Le fichier {csv_filename} n'existe pas.")
-            return Fase
-    except FileNotFoundError:
-        print(f"Le fichier {csv_filename} n'existe pas.")
-        return False
+            return False
