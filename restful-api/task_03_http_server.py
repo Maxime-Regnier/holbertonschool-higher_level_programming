@@ -8,7 +8,7 @@ class SimpleHandler(BaseHTTPRequestHandler):
             self.send_response(200)
             self.send_header("Content-type", "application/json")
             self.end_headers()
-            response = {"message": "Hello from http.server API!"}
+            response = {"message":"Hello from http.server API!"}
             self.wfile.write(json.dumps(response).encode())
         elif self.path == "/data":
             self.send_response(200)
