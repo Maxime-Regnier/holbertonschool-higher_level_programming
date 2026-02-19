@@ -59,7 +59,7 @@ def jwt_protected():
 def admin_only():
         identity = get_jwt_identity()
         if identity["role"] != "admin":
-            return "Admin access required", 403
+            return jsonify(error="Admin access required"), 403
         return "Admin Access: Granted"
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
