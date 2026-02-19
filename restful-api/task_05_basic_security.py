@@ -21,29 +21,31 @@ user = {
 }
 @auth.verify_password
 def verify(username, password):
-    if username in users and check_password_hash(user[username]["password"], password):
+    if username in user and check_password_hash(user[username]["password"], password):
         return username
-    @app.route("/basic-protected")
-    @auth.login_required
-    def basic_protected():
+@app.route("/basic-protected")
+@auth.login_required
+def basic_protected():
         return jsonify(message="Basic Auth: Access Granted")
-    @app.route("/login", methods=["POST"])
-    def login():
+@app.route("/login", methods=["POST"])
+def login():
         data = request.get_json()
         username = data.get("username")
         password = data.get("password")
-        if username in users and check_password_hash(user[username]["password"], password):
-            token = create_access_token(identity=users[usename])
-            return jsonify(create_token=token)
+        if username in user and check_password_hash(user[username]["password"], password):
+            token = create_access_token(identity=user[username])
+            return jsonify(access_token=token)
         return jsonify(error="Invalid credentials"), 401
-    @app.route("/jwt-protected")
-    @jwt_required()
-    def jwt_protected():
+@app.route("/jwt-protected")
+@jwt_required()
+def jwt_protected():
         return jsonify(message="JWT Auth: Access Granted")
-    @app.route("/admin-only")
-    @jwt_required()
-    def admin_only():
+@app.route("/admin-only")
+@jwt_required()
+def admin_only():
         identity = get_jwt_identity()
         if identity["role"] != "admin":
             return jsonify(error="Admin access required"), 403
         return jsonify(message="Admin Access: Granted")
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)
