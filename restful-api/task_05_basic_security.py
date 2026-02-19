@@ -7,6 +7,20 @@ app = Flask(__name__)
 auth = HTTPBasicAuth()
 app.config["JWT_SECRET_KEY"] = "super-secret-key"
 jwt = JWTManager(app)
+@jwt.unauthorized_loader
+def missing_token_call(err):
+    return "Missing or invalid token", 401
+@jwt.invalid_token_loader
+def invalid_token_callbacl(err):
+    return "Missing or invalid token", 401
+@jwt.expired_token_loader
+def expired_token_callback(jwt_header, jwt_payload):
+    return "Token has expired", 401
+@jwt.revoked_token_loader
+def revoked_token_callback(jwt_header, jwt_payload):
+    def revoked_token_callback(jwt_header, jwt_payload):
+        return "Token has been revoked", 401
+    
 user = {
     "user1": {
         "username": "user1",
