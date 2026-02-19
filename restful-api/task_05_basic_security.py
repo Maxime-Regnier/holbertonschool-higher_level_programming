@@ -33,7 +33,7 @@ def verify(username, password):
         username = data.get("username")
         password = data.get("password")
         if username in users and check_password_hash(user[username]["password"], password):
-            token = create_acces_token(identity=users[usename])
+            token = create_access_token(identity=users[usename])
             return jsonify(create_token=token)
         return jsonify(error="Invalid credentials"), 401
     @app.route("/jwt-protected")
