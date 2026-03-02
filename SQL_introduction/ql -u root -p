@@ -1,0 +1,20 @@
+[0;1;32m●[0m mysql.service - MySQL Community Server
+     Loaded: loaded (/lib/systemd/system/mysql.service; enabled; vendor preset: enabled)
+     Active: [0;1;32mactive (running)[0m since Mon 2026-03-02 11:33:24 CET; 20s ago
+   Main PID: 2489 (mysqld)
+     Status: "Server is operational"
+      Tasks: 38 (limit: 18832)
+     Memory: 362.1M
+        CPU: 928ms
+     CGroup: /system.slice/mysql.service
+             └─2489 /usr/sbin/mysqld
+
+Mar 02 11:33:23 MaximeREGNIER systemd[1]: Starting MySQL Community Server...
+Mar 02 11:33:23 MaximeREGNIER mysqld[2489]: 2026-03-02T10:33:23.613503Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0.42-0ubuntu0.20.04.1) starting as process 2489
+Mar 02 11:33:23 MaximeREGNIER mysqld[2489]: 2026-03-02T10:33:23.621114Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+Mar 02 11:33:23 MaximeREGNIER mysqld[2489]: 2026-03-02T10:33:23.836218Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+Mar 02 11:33:24 MaximeREGNIER mysqld[2489]: 2026-03-02T10:33:24.055599Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+Mar 02 11:33:24 MaximeREGNIER mysqld[2489]: 2026-03-02T10:33:24.055647Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+Mar 02 11:33:24 MaximeREGNIER mysqld[2489]: 2026-03-02T10:33:24.078069Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060, socket: /var/run/mysqld/mysqlx.sock
+Mar 02 11:33:24 MaximeREGNIER mysqld[2489]: 2026-03-02T10:33:24.078179Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.0.42-0ubuntu0.20.04.1'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  (Ubuntu).
+Mar 02 11:33:24 MaximeREGNIER systemd[1]: Started MySQL Community Server.
