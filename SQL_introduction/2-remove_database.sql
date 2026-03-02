@@ -1,0 +1,1 @@
+DROP DATEBASE IF EXISTS hbtn_0c_0;
