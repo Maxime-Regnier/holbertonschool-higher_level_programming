@@ -1,8 +1,10 @@
 -- Create users if they do not exist and grant privileges
 CREATE USER IF NOT EXISTS 'user_0d_1'@'localhost' IDENTIFIED BY '01234';
 CREATE USER IF NOT EXISTS 'user_0d_2'@'localhost' IDENTIFIED BY '56789';
+
 GRANT SELECT, INSERT, UPDATE, DELETE, CREATE ON *.* TO 'user_0d_1'@'localhost';
 GRANT SELECT, INSERT, UPDATE, DELETE, CREATE ON *.* TO 'user_0d_2'@'localhost';
+
 FLUSH PRIVILEGES;
 
 -- List privileges for user_0d_1 and user_0d_2
