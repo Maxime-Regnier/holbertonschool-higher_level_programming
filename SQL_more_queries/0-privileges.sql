@@ -1,3 +1,7 @@
+-- Create users if they do not exist
+CREATE USER IF NOT EXISTS 'user_0d_1'@'localhost' IDENTIFIED BY '01234';
+CREATE USER IF NOT EXISTS 'user_0d_2'@'localhost' IDENTIFIED BY '56789';
+
 -- Drop users if they exist
 DROP USER IF EXISTS 'user_0d_1'@'localhost';
 DROP USER IF EXISTS 'user_0d_2'@'localhost';
