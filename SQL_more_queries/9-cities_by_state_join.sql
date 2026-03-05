@@ -10,6 +10,7 @@ name VARCHAR(256) NOT NULL,
 FOREIGN KEY (state_id) REFERENCES states(id)
 );
 
+-- List all cities with their state name
 SELECT cities.id, cities.name, states.name
 FROM cities
 JOIN states ON cities.state_id = states.id
