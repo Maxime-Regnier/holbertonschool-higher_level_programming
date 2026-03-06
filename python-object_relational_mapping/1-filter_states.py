@@ -1,5 +1,15 @@
 #!/usr/bin/python3
-"""Script that lists all states with a name starting with N"""
+"""
+Script that lists all states with a name starting with N from database hbtn_0e_0_usa.
+
+This module connects to a MySQL database and displays all states whose names
+begin with the uppercase letter N, sorted by their id in ascending order.
+
+Takes 3 command-line arguments:
+    - MySQL username
+    - MySQL password
+    - Database name
+""" 
 
 if __name__ == '__main__':
     from sys import argv
