@@ -8,12 +8,10 @@ from sys import argv
 
 from model_state import Base, State
 
-# Run only executed
 if __name__ == "__main__":
 
     # Engine creation with mysql and mysqldb DBAPI
-    engine = create_engine("mysql+mysqldb://{}:{}@localhost:3306/{}"
-                           .format(argv[1], argv[2], argv[3]))
+    engine = create_engine("mysql+mysqldb://{}:{}@localhost:3306/{}".format(argv[1], argv[2], argv[3]), pool_pre_ping=True)
 
     # Creating all classes in DB
     Base.metadata.create_all(engine)
@@ -23,9 +21,7 @@ if __name__ == "__main__":
     session = Session()
 
     # The Query
-    state = (session.query(State)
-             .filter(State.name == argv[4])
-             .first())
+    state = session.query(State).filter(State.name == argv[4]).first()
 
     # Printing the result
     if state is None:
@@ -34,5 +30,4 @@ if __name__ == "__main__":
         print(state.id)
 
     # Closing the session
-    if session:
-        session.close()
+    session.close()
