@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module for Selecting states"""
+"""Module for selecting and displaying all states from a MySQL database"""
 
 if __name__ == '__main__':
     from sys import argv
@@ -13,7 +13,7 @@ if __name__ == '__main__':
     )
     cursor = db.cursor()
 
-    cursor.execute('SELECT * FROM states')
+    cursor.execute('SELECT * FROM states ORDER BY id ASC')
 
     for state in cursor.fetchall():
         print(state)
