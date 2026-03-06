@@ -24,7 +24,7 @@ if __name__ == '__main__':
         charset="utf8"
     )
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM states WHERE LEFT(name, 1) = 'N' ORDER BY id ASC")
+    cursor.execute("SELECT * FROM states WHERE SUBSTR(name, 1, 1) = 'N' ORDER BY id ASC")
 
     for state in cursor.fetchall():
         print(state)
