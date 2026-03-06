@@ -1,10 +1,9 @@
 #!/usr/bin/python3
-"""Module for selecting and displaying all states from a MySQL database"""
+"""Displays all states from the database hbtn_0e_0_usa"""
 
 if __name__ == '__main__':
     from sys import argv
     import MySQLdb
-
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
@@ -14,13 +13,8 @@ if __name__ == '__main__':
         charset="utf8"
     )
     cursor = db.cursor()
-
-    cursor.execute('SELECT * FROM states ORDER BY id ASC')
-
+    cursor.execute("SELECT * FROM states ORDER BY id ASC")
     for state in cursor.fetchall():
         print(state)
-
-    if cursor:
-        cursor.close()
-    if db:
-        db.close()
+    cursor.close()
+    db.close()
