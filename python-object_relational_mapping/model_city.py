@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Module containing City class"""
-from sqlalchemy import Column, Integer, String, ForeignKey  # type: ignore
+from sqlalchemy import Column, Integer, String, ForeignKey
 from model_state import Base
 
 
