@@ -7,7 +7,7 @@ Usage: ./2-my_filter_states.py <username> <password> <database> <state_name>
 Results are sorted by states.id in ascending order
 """
 
-import MySQLdb
+import MySQLdb  # type: ignore
 import sys
 
 if __name__ == "__main__":
@@ -29,8 +29,11 @@ if __name__ == "__main__":
     # Create a cursor object to execute queries
     cursor = db.cursor()
 
-    # Execute the query with parameterized input to prevent SQL injection
-    cursor.execute("SELECT * FROM states WHERE name = %s ORDER BY id ASC;", (state_name,))
+    # Use format to create the SQL query with user input
+    query = "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC;".format(state_name)
+
+    # Execute the query
+    cursor.execute(query)
 
     # Fetch all results and print each row
     rows = cursor.fetchall()
