@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Module for fetching all states containing letter 'a'.
+Module for fetching a state by name.
 """
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker

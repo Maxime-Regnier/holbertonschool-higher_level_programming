@@ -6,9 +6,10 @@ if __name__ == '__main__':
     import MySQLdb
 
     db = MySQLdb.connect(
+        host="localhost",
         user=argv[1],
-        password=argv[2],
-        database=argv[3]
+        passwd=argv[2],
+        db=argv[3]
     )
     cursor = db.cursor()
 
