@@ -26,8 +26,12 @@ if __name__ == "__main__":
     # Create a cursor object to execute queries
     cursor = db.cursor()
 
-    # Execute the query to select all cities sorted by id
-    cursor.execute("SELECT * FROM cities ORDER BY id ASC;")
+    # Execute the query to select all cities with their state names
+    # Using JOIN to get the state name instead of state_id
+    cursor.execute("""SELECT cities.id, cities.name, states.name 
+                      FROM cities 
+                      JOIN states ON cities.state_id = states.id 
+                      ORDER BY cities.id ASC""")
 
     # Fetch all results and print each row
     rows = cursor.fetchall()
