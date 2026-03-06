@@ -1,31 +1,41 @@
 #!/usr/bin/python3
 """
-Module for fetching a state by name.
+Prints the State object with the name passed as argument
+from the database hbtn_0e_6_usa
 """
+import sys
+from model_state import Base, State
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from sys import argv
 
-from model_state import Base, State
 
 if __name__ == "__main__":
+    # Récupération des arguments
+    user = sys.argv[1]
+    passwd = sys.argv[2]
+    db_name = sys.argv[3]
+    state_to_search = sys.argv[4]
 
-    # Engine creation with mysql and mysqldb DBAPI
-    engine = create_engine("mysql+mysqldb://{}:{}@localhost:3306/{}".format(argv[1], argv[2], argv[3]), pool_pre_ping=True)
+    # Connexion à la base de données
+    # Utilisation de localhost et du port 3306 comme demandé
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
+                           .format(user, passwd, db_name),
+                           pool_pre_ping=True)
 
-    # Creating Session and its instance
+    # Création de la session
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    try:
-        # The Query
-        state = session.query(State).filter(State.name == argv[4]).first()
+    # Requête avec filtre sur le nom
+    # SQLAlchemy gère automatiquement la protection contre l'injection SQL
+    # dans les filtres d'objets.
+    state = session.query(State).filter(State.name == state_to_search).first()
 
-        # Printing the result
-        if state is None:
-            print("Not found")
-        else:
-            print(state.id)
-    finally:
-        # Closing the session
-        session.close()
+    # Affichage du résultat
+    if state:
+        print("{}".format(state.id))
+    else:
+        print("Not found")
+
+    # Fermeture de la session
+    session.close()
