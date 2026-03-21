@@ -1,19 +1,11 @@
 #!/usr/bin/python3
-"""
-Script that lists all states with a name starting with N from database hbtn_0e_0_usa.
+"""List all states starting with N from a MySQL database."""
 
-This module connects to a MySQL database and displays all states whose names
-begin with the uppercase letter N, sorted by their id in ascending order.
 
-Takes 3 command-line arguments:
-    - MySQL username
-    - MySQL password
-    - Database name
-""" 
-
-if __name__ == '__main__':
-    from sys import argv
+def main():
+    """Connect to the database and print matching states ordered by id."""
     import MySQLdb
+    from sys import argv
 
     db = MySQLdb.connect(
         host="localhost",
@@ -24,10 +16,18 @@ if __name__ == '__main__':
         charset="utf8"
     )
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM states WHERE SUBSTR(name, 1, 1) = 'N' ORDER BY id ASC")
+    cursor.execute(
+        "SELECT * FROM states "
+        "WHERE name LIKE BINARY 'N%' "
+        "ORDER BY states.id ASC"
+    )
 
     for state in cursor.fetchall():
         print(state)
 
     cursor.close()
     db.close()
+
+
+if __name__ == "__main__":
+    main()
