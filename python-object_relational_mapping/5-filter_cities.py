@@ -24,10 +24,16 @@ if __name__ == "__main__":
     cursor = db.cursor()
 
     # Using parameterized query to prevent SQL injection
-    cursor.execute("SELECT cities.name FROM cities JOIN states ON cities.state_id = states.id WHERE states.name = %s ORDER BY cities.id ASC", (state_name,))
+    cursor.execute(
+        "SELECT cities.name FROM cities "
+        "JOIN states ON cities.state_id = states.id "
+        "WHERE states.name = %s "
+        "ORDER BY cities.id ASC",
+        (state_name,)
+    )
 
     rows = cursor.fetchall()
-    
+
     # Format output as comma-separated city names
     city_names = [row[0] for row in rows]
     print(", ".join(city_names))

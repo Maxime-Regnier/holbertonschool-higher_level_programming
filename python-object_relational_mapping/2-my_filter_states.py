@@ -30,7 +30,10 @@ if __name__ == "__main__":
     cursor = db.cursor()
 
     # Execute the query with parameterized input to prevent SQL injection
-    cursor.execute("SELECT * FROM states WHERE name = %s ORDER BY id ASC;", (state_name,))
+    cursor.execute(
+        "SELECT * FROM states WHERE name = %s ORDER BY id ASC;",
+        (state_name,)
+    )
 
     # Fetch all results and print each row
     rows = cursor.fetchall()
